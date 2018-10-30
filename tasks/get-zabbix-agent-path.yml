@@ -8,9 +8,6 @@
 - stat: path=/etc/zabbix/zabbix_agentd.conf.d
   register: zabbix_agent_conf_d
 
-# Test this:
-# zabbix_agent_conf_dir: "{{ '/etc/zabbix/zabbix_agentd.d/' if zabbix_agent_d.stat.exists else '/etc/zabbix/zabbix_agentd.conf.d'"
-
 - name: Using /etc/zabbix/zabbix_agentd.d/ as configuration file storage
   set_fact:
     zabbix_agent_conf_dir: "/etc/zabbix/zabbix_agentd.d/"
