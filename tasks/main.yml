@@ -1,7 +1,7 @@
 
-# On Debian systems we habe to find the correct path
+# On Debian systems we have to find the correct path
 - include_tasks: get-zabbix-agent-path.yml
-  when: (ansible_distribution == "Debian")
+  when: (ansible_distribution == "Debian") or (ansible_distribution == "Ubuntu")
 
 # FreeBSD has no ansible_lsb
 - name: "Include OS-specific variables"
