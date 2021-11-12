@@ -1,20 +1,25 @@
 ---
 
+# Sets the variable zabbix_agent_conf_dir
+# Contains the path to the dir without final '/' (was mixed before 2021-11-12)
+
 # This is the zabbix.com default
-- stat: path=/etc/zabbix/zabbix_agentd.d
+- stat:
+    path: /etc/zabbix/zabbix_agentd.d
   register: zabbix_agent_d
 
 # This is the debian default
-- stat: path=/etc/zabbix/zabbix_agentd.conf.d
+- stat:
+    path: /etc/zabbix/zabbix_agentd.conf.d
   register: zabbix_agent_conf_d
 
 - name: Using /etc/zabbix/zabbix_agentd.d/ as configuration file storage
   set_fact:
-    zabbix_agent_conf_dir: "/etc/zabbix/zabbix_agentd.d/"
+    zabbix_agent_conf_dir: /etc/zabbix/zabbix_agentd.d
   when: zabbix_agent_d.stat.exists
 
 - name: Using /etc/zabbix/zabbix_agentd.conf.d as configuration file storage
   set_fact:
-    zabbix_agent_conf_dir: "/etc/zabbix/zabbix_agentd.conf.d"
+    zabbix_agent_conf_dir: /etc/zabbix/zabbix_agentd.conf.d
   when: zabbix_agent_conf_d.stat.exists
 

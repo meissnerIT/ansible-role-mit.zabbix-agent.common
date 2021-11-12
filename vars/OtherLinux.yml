@@ -1,6 +1,7 @@
 ---
 # vars file for zabbix-agent (Synology)
 
+# Contains the path to the dir without final '/' (was mixed before 2021-11-12)
 zabbix_agent_conf_dir: "/volume1/zabbix/conf/zabbix_agentd"
 zabbix_agent_service: zabbix-agent
 
