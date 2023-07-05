@@ -6,3 +6,6 @@
     state: restarted
   become: yes
 
+- name: Restart zabbix-agent (entware)
+  command: /opt/etc/init.d/S07zabbix_agentd restart
+
