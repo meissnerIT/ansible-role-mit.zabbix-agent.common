@@ -1,6 +1,7 @@
 ---
 # vars file for zabbix-agent (FreeBSD)
 
+# mit-zabbix-set-pkg-name-prefix - 5, 6, 64, 7
 zabbix_agent_pkg_name_prefix: "zabbix{{ zabbix_agent_version | regex_replace('^([0-9]+)\\.([0-9]+)(.*)$', '\\1\\2') }}"
 # Contains the path to the dir without final '/' (was mixed before 2021-11-12)
 zabbix_agent_conf_dir: /usr/local/etc/{{ zabbix_agent_pkg_name_prefix }}/zabbix_agentd.conf.d
