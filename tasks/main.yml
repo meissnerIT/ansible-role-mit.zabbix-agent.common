@@ -1,12 +1,12 @@
-
+---
 # On Debian systems we have to find the correct path
-- include_tasks: get-zabbix-agent-path.yml
+- name: Include get-zabbix-agent-path.yml
+  ansible.builtin.include_tasks: get-zabbix-agent-path.yml
   when: (ansible_distribution == "Debian") or (ansible_distribution == "Ubuntu")
 
 # FreeBSD has no ansible_lsb
 - name: "Include OS-specific variables"
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - "{{ ansible_os_family }}.yml"
     - "default.yml"
-
