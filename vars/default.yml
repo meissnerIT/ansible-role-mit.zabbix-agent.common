@@ -2,4 +2,4 @@
 # vars file for zabbix-agent (default)
 
 zabbix_agent_service: zabbix-agent
-
+zabbix_user_home: /var/lib/zabbix
