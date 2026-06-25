@@ -1,0 +1,3 @@
+---
+zabbix_agent_conf_dir: /etc/zabbix/zabbix_agentd.conf.d
+zabbix_agent_service: zabbix-agent
